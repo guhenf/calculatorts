@@ -1,22 +1,23 @@
-import { Button, Grid, Paper, styled } from '@mui/material'
+import { Button, Card, Grid, styled } from '@mui/material'
 import { Container } from '@mui/system'
 import { useState } from 'react'
 import { GridDigitButton } from './gridDigitButton'
 import { GridOperationButton } from './gridOperationButton'
 
 const OutputContainer = styled('div')(({ theme }) => ({
+	background: '#121212',
 	width: '100%',
-	height: '2em',
-	padding: theme.spacing(2),
+	padding: theme.spacing(1),
 	textAlign: 'right',
-	fontSize: '3em',
+	fontSize: '2em',
 	overflow: 'hidden',
+	borderRadius: '4px',
 }))
 
-const Calculator = styled(Paper)(({ theme }) => ({
-	padding: theme.spacing(2),
-	marginTop: theme.spacing(4),
-	borderRadius: 15,
+const Calculator = styled(Card)(({ theme }) => ({
+	padding: theme.spacing(1.5),
+	marginTop: theme.spacing(2),
+	borderRadius: 5,
 }))
 
 function App() {
@@ -70,9 +71,21 @@ function App() {
 		setOverwrite(true)
 	}
 
+	const percent = () => {
+		const curr = parseFloat(currentValue)
+		setCurrentValue((curr / 100).toString())
+	}
+
 	const selectOperation = (operation: string) => {
+		if (prevValue) {
+			const val = calculate()
+			setCurrentValue(`${val}`)
+			setPrevValue(`${val}`)
+		} else {
+			setPrevValue(currentValue)
+		}
+
 		setOperation(operation)
-		setPrevValue(currentValue)
 		setOverwrite(true)
 	}
 
@@ -107,7 +120,7 @@ function App() {
 						/>
 						<GridOperationButton
 							operation={'%'}
-							selectOperation={selectOperation}
+							selectOperation={percent}
 							selectedOperation={operation}
 						/>
 						<GridOperationButton
