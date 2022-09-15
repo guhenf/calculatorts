@@ -3,13 +3,13 @@ import { createTheme } from '@mui/material'
 export const theme = createTheme({
 	palette: {
 		mode: 'dark',
-		primary: { main: '#000' },
+		primary: { main: '#fff' },
 	},
 	components: {
 		MuiButton: {
 			styleOverrides: {
 				root: {
-					borderRadius: 25,
+					borderRadius: 5,
 				},
 			},
 		},
