@@ -1,10 +1,15 @@
-import { Button, Grid } from '@mui/material'
+import { Button, Grid, styled } from '@mui/material'
 
 interface GridDigitButtonProps {
 	digit: string
 	enterDigit: (digit: string) => void
 	xs?: number
 }
+
+const StyledButton = styled(Button)(() => ({
+	borderWidth: 1.5,
+	borderColor: '#fff',
+}))
 
 export const GridDigitButton: React.FC<GridDigitButtonProps> = ({
 	digit,
@@ -13,9 +18,9 @@ export const GridDigitButton: React.FC<GridDigitButtonProps> = ({
 }) => {
 	return (
 		<Grid item xs={xs}>
-			<Button fullWidth variant="outlined" onClick={() => enterDigit(digit)}>
+			<StyledButton fullWidth variant="outlined" onClick={() => enterDigit(digit)}>
 				{digit}
-			</Button>
+			</StyledButton>
 		</Grid>
 	)
 }
