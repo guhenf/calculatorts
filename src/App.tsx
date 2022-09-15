@@ -1,8 +1,8 @@
 import { Button, Card, Grid, styled } from '@mui/material'
 import { Container } from '@mui/system'
 import { useState } from 'react'
-import { GridDigitButton } from './gridDigitButton'
-import { GridOperationButton } from './gridOperationButton'
+import { GridDigitButton } from './components/gridDigitButton'
+import { GridOperationButton } from './components/gridOperationButton'
 
 const OutputContainer = styled('div')(({ theme }) => ({
 	background: '#121212',
