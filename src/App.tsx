@@ -1,6 +1,7 @@
 import { Button, Card, Grid, styled } from '@mui/material'
 import { Container } from '@mui/system'
 import { useState } from 'react'
+import { GridBasicOperationButton } from './components/gridBasicOperationButton'
 import { GridDigitButton } from './components/gridDigitButton'
 import { GridOperationButton } from './components/gridOperationButton'
 
@@ -123,7 +124,7 @@ function App() {
 							selectOperation={percent}
 							selectedOperation={operation}
 						/>
-						<GridOperationButton
+						<GridBasicOperationButton
 							operation={'÷'}
 							selectOperation={selectOperation}
 							selectedOperation={operation}
@@ -134,7 +135,7 @@ function App() {
 						<GridDigitButton digit={'8'} enterDigit={setDigit}></GridDigitButton>
 						<GridDigitButton digit={'9'} enterDigit={setDigit}></GridDigitButton>
 						<GridOperationButton
-							operation={'*'}
+							operation={'x'}
 							selectOperation={selectOperation}
 							selectedOperation={operation}
 						/>
@@ -143,7 +144,7 @@ function App() {
 						<GridDigitButton digit={'4'} enterDigit={setDigit}></GridDigitButton>
 						<GridDigitButton digit={'5'} enterDigit={setDigit}></GridDigitButton>
 						<GridDigitButton digit={'6'} enterDigit={setDigit}></GridDigitButton>
-						<GridOperationButton
+						<GridBasicOperationButton
 							operation={'-'}
 							selectOperation={selectOperation}
 							selectedOperation={operation}
@@ -153,7 +154,7 @@ function App() {
 						<GridDigitButton digit={'1'} enterDigit={setDigit}></GridDigitButton>
 						<GridDigitButton digit={'2'} enterDigit={setDigit}></GridDigitButton>
 						<GridDigitButton digit={'3'} enterDigit={setDigit}></GridDigitButton>
-						<GridOperationButton
+						<GridBasicOperationButton
 							operation={'+'}
 							selectOperation={selectOperation}
 							selectedOperation={operation}
